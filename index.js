@@ -32,7 +32,7 @@ let pets =
     peso: 20,
     tutor: 'Luciano',
     contato: '(81) 98789-3018',
-    vacinado: true,
+    vacinado: false,
     serviços: ['banho', 'tosa']
 },
 ];
@@ -41,9 +41,31 @@ const listarPets = () =>{
     for(let pet of pets){
         // console.log(pets[i].nome + " " + pets[i].tutor);
         console.log(`O Nome do pet é ${pet.nome}, e o nome do  tutor é ${pet.tutor}`);
+        vacinarPet(pet.vacinado, pet.nome);
     }
 }
+const vacinarPet = (vacinado, nome) =>{
+  if(vacinado === false){
+      console.log(`${nome} Não foi vacinado`);
+  }
+
+}
+const campanhaVacina = () => {
+      
+    let naoVacinados = 0;
+      for(let pet of pets){
+       if(pet.vacinado === false){
+           naoVacinados++;
+       }
+
+    }
+    console.log("========================")
+    console.log(`${naoVacinados} deve ser vacinados!`);
+
+}
+    
 
 listarPets();
+campanhaVacina();
 
 //console. log(pet);
